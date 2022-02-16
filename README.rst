@@ -65,7 +65,6 @@ In the product form's `eCommerce` tab, you can choose the notification type in t
 ``On Not Available`` select field directly under ``Availability``.
 
 
-
 Overview of pending Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -90,3 +89,4 @@ Authors
 ^^^^^^^
 
 * Michael Jurke
+* Ayudoo Ltd <support@ayudoo.bg>
