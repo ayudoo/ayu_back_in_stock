@@ -1,0 +1,764 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ayu_back_in_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-16 16:55+0000\n"
+"PO-Revision-Date: 2022-02-16 16:55+0000\n"
+"Last-Translator: <m.jurke@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ayu_back_in_stock
+#: model:mail.template,subject:ayu_back_in_stock.mail_template_back_in_stock
+msgid "${object.product_name} is Back in Stock!"
+msgstr "${object.product_name} ist wieder verfügbar!"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notification_form
+msgid "(Re)send Registration Mail"
+msgstr "Registrierungs-Mail (erneut) Senden"
+
+#. module: ayu_back_in_stock
+#: model:mail.template,body_html:ayu_back_in_stock.mail_template_back_in_stock
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"  <p style=\"margin: 0px; padding: 0px; font-size: 12px;\">\n"
+"    Hello,\n"
+"    <br/><br/>\n"
+"    <p>\n"
+"      <a href=\"${object.product_id.website_url | safe}\">${object.product_name}</a>\n"
+"      is available again!\n"
+"    </p>\n"
+"    <p>React quick, so you don't miss it.</p>\n"
+"  </p>\n"
+"</div>"
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"  <p style=\"margin: 0px; padding: 0px; font-size: 12px;\">\n"
+"    Hello,\n"
+"    <br/><br/>\n"
+"    <p>\n"
+"      <a href=\"${object.product_id.website_url | safe}\">${object.product_name}</a>\n"
+"      ist wieder verfügbar!\n"
+"    </p>\n"
+"    <p>Handeln Sie schnell, so dass Sie es nicht verpassen.</p>\n"
+"  </p>\n"
+"</div>"
+
+#. module: ayu_back_in_stock
+#: model:mail.template,body_html:ayu_back_in_stock.mail_template_registration
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"  <p style=\"margin: 0px; padding: 0px; font-size: 12px;\">\n"
+"    Hello,\n"
+"    <br/><br/>\n"
+"    <p>Thank you for the interest in our product\n"
+"      <a href=\"${object.product_id.website_url | safe}\">${object.product_name}</a>!\n"
+"    </p>\n"
+"    <p>We received your registration and will notify you as soon as it's back in stock. Please apologize the waiting time.</p>\n"
+"    <p>Do not hesitate to contact us if you have any questions.</p>\n"
+"  </p>\n"
+"</div>"
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"  <p style=\"margin: 0px; padding: 0px; font-size: 12px;\">\n"
+"    Hallo,\n"
+"    <br/><br/>\n"
+"    <p>Vielen Dank für Ihr Interesse in unser Produkt\n"
+"      <a href=\"${object.product_id.website_url | safe}\">${object.product_name}</a>!\n"
+"    </p>\n"
+"    <p>Wir haben Ihre Registrierung erhalten und werden Sie benachrichtigen, sobald es wieder auf Lager ist. Bitte entschuldigen Sie die Wartezeit.</p>\n"
+"    <p>Haben Sie Fragen? Bitte nicht zögern und kontaktieren Sie uns.</p>\n"
+"  </p>\n"
+"</div>"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.product_form_view_procurement_button
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.product_template_form_view_procurement_button
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_partner_form
+msgid "<span class=\"o_stat_text\">Pending</span>"
+msgstr "<span class=\"o_stat_text\">Ausstehend</span>"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_needaction
+msgid "Action Needed"
+msgstr "Aktion Notwendig"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_config_settings__auto_send_back_in_stock_active
+msgid "Activate Auto Send Back in Stock Notifications"
+msgstr "Verfügbarkeitsbenachrichtigungen Automatisch Senden"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_config_settings__website_back_in_stock_active
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_website__back_in_stock_active
+msgid "Activate Back in Stock Customer Registrations"
+msgstr "Registrierung für Verfügbarkeitsbenachrichtigungen aktivieren"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__active
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.back_in_stock_already_registered
+msgid "Already Registerd"
+msgstr "Bereits Registriert"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notification_type_form
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notification_types_search
+msgid "Archived"
+msgstr "Archiviert"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_attachment_count
+msgid "Attachment Count"
+msgstr "# Anhänge"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_config_settings__auto_send_back_in_stock_interval_number
+msgid "Auto Send Back in Stock Interval Number"
+msgstr "Verfügbarkeitsbenachrichtigung Intervall"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_config_settings__auto_send_back_in_stock_interval_type
+msgid "Auto Send Back in Stock Interval Unit"
+msgstr "Verfügbarkeitsbenachrichtigung Intervalleinheit"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_config_settings__auto_send_back_in_stock_nextcall
+msgid "Auto Send Back in Stock Next Execution Date"
+msgstr "Verfügbarkeitsbenachrichtigung Nächste Ausführung"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_config_settings__auto_send_back_in_stock_ir_cron_id
+msgid "Auto Send Back in Stock Notifications"
+msgstr "Verfügbarkeitsbenachrichtigung Automatisch Senden"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,help:ayu_back_in_stock.field_res_config_settings__auto_send_back_in_stock_interval_number
+msgid "Auto Send Back in Stock Repeat every x."
+msgstr "Verfügbarkeitsbenachrichtigungen jede X Senden"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_product_product__back_in_stock_count
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_product_template__back_in_stock_count
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_partner__back_in_stock_count
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_users__back_in_stock_count
+msgid "Back In Stock Count"
+msgstr "# Verfügbarkeitsbenachrichtigungen"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.res_config_settings_view_form
+msgid "Back in Stock"
+msgstr "Verfügbarkeitsbenachrichtigen"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__back_in_stock_template_id
+msgid "Back in Stock Email"
+msgstr "Verfügbarkeitsbenachrichtigungs-Email"
+
+#. module: ayu_back_in_stock
+#: model:ir.model,name:ayu_back_in_stock.model_ayu_back_in_stock_notification
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notification_form
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notification_tree
+msgid "Back in Stock Notification"
+msgstr "Verfügbarkeitsbenachrichtigung"
+
+#. module: ayu_back_in_stock
+#: model:ir.model,name:ayu_back_in_stock.model_ayu_back_in_stock_notification_type
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_product_product__back_in_stock_notification_type_id
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_product_template__back_in_stock_notification_type_id
+msgid "Back in Stock Notification Type"
+msgstr "Verfügbarkeitsbenachrichtigungs-Typ"
+
+#. module: ayu_back_in_stock
+#: model:ir.ui.menu,name:ayu_back_in_stock.menu_product_notification_type
+msgid "Back in Stock Notification Types"
+msgstr "Verfügbarkeitsbenachrichtigungs-Typen"
+
+#. module: ayu_back_in_stock
+#: model:ir.actions.act_window,name:ayu_back_in_stock.action_notification
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_product_product__back_in_stock_ids
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_partner__back_in_stock_ids
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_users__back_in_stock_ids
+#: model:ir.ui.menu,name:ayu_back_in_stock.product_back_in_stock_notification_menu
+msgid "Back in Stock Notifications"
+msgstr "Verfügbarkeitsbenachrichtigungen"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notifications_search
+msgid "Back in Stock Notifications Search"
+msgstr "Verfügbarkeitsbenachrichtigungs-Suche"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.res_config_settings_view_form_website
+msgid "Back in Stock Registration"
+msgstr "Verfügbarkeitsbenachrichtigungs-Registrierung"
+
+#. module: ayu_back_in_stock
+#: model:ir.actions.server,name:ayu_back_in_stock.ir_cron_send_back_in_stock_notifications_ir_actions_server
+#: model:ir.cron,cron_name:ayu_back_in_stock.ir_cron_send_back_in_stock_notifications
+#: model:ir.cron,name:ayu_back_in_stock.ir_cron_send_back_in_stock_notifications
+msgid "Back in Stock: send notifications"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.back_in_stock_registration_form
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notification_form
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields.selection,name:ayu_back_in_stock.selection__ayu_back_in_stock_notification__state__cancel
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notifications_search
+msgid "Cancelled"
+msgstr "Abgebrochen"
+
+#. module: ayu_back_in_stock
+#: model:ir.model,name:ayu_back_in_stock.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfiguration "
+
+#. module: ayu_back_in_stock
+#: model:ir.model,name:ayu_back_in_stock.model_res_partner
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__partner_id
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__create_uid
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__create_date
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__create_date
+msgid "Created on"
+msgstr "Ersellt am"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_config_settings__back_in_stock_notification_type_id
+msgid "Default Notification Type"
+msgstr "Standard Benachrichtigungs-Typ"
+
+#. module: ayu_back_in_stock
+#: model:ayu_back_in_stock.notification_type,name:ayu_back_in_stock.default_notification_type
+msgid "Default Notify Me"
+msgstr "Stardard Benachrichtigung"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__display_name
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__display_name
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_product_product__display_name
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_product_template__display_name
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_partner__display_name
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_website__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__email
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.back_in_stock_registration_form
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notifications_search
+msgid "Email"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,help:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__registration_template_id
+msgid "Email sent to the customer after having registered for back in stock."
+msgstr "Email, die der Kunde nach der Registrierung erhält."
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,help:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__back_in_stock_template_id
+msgid "Email sent to the customer when the product is back in stock."
+msgstr ""
+"Email, die der Kunde erhält, nachdem ein Produkt wieder verfügbar ist."
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__fixed_count
+msgid "Fixed"
+msgstr "Fest"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_follower_ids
+msgid "Followers"
+msgstr "Abonnenten"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Abonnenten (Kanäle)"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Abonnenten (Partner)"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,help:ayu_back_in_stock.field_ayu_back_in_stock_notification__email_formatted
+msgid "Format email address \"Name <email@domain>\""
+msgstr "E-Mail Adressenformat \"Name <email@domain>\""
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__email_formatted
+msgid "Formatted Email"
+msgstr "Formatierte Email"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.res_config_settings_view_form
+msgid "General options for Back in Stock Notifications"
+msgstr "Allgemeine Optionen für Verfügbarkeitsbenachrichtigungen"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.back_in_stock_registration_form
+msgid "I want to be notified when Back in Stock"
+msgstr "Ich möchte informiert werden, wenn wieder verfügbar"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__id
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__id
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_product_product__id
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_product_template__id
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_config_settings__id
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_partner__id
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_website__id
+msgid "ID"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,help:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_needaction
+#: model:ir.model.fields,help:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Falls markiert, benötigen neue Nachrichten Ihre Kenntnisnahme."
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,help:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_has_error
+#: model:ir.model.fields,help:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+"Das Senden mancher Nachrichten ist fehlgeschlagen wenn dieses Fenster "
+"angekreuzt ist."
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,help:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__active
+msgid ""
+"If the active field is set to false, it will allow you to hide it without "
+"removing it."
+msgstr ""
+"Deaktivieren erlaubt es Ihnen, den Eintrag zu verstecken, ohne ihn zu "
+"löschen."
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.res_config_settings_view_form_website
+msgid ""
+"If the product is configured accordingly, users can register for back in stock\n"
+"            notifications."
+msgstr ""
+"Wenn das Produkt entsprechend konfiguriert ist, können sich Nutzer für "
+"Verfügbarkeitsbenachrichtigungen registrieren."
+
+#. module: ayu_back_in_stock
+#. openerp-web
+#: code:addons/ayu_back_in_stock/static/src/xml/product_availability.xml:0
+#, python-format
+msgid "In stock"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_is_follower
+msgid "Is Follower"
+msgstr "Ist ein Abonnent"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__lang_id
+msgid "Language"
+msgstr "Sprache"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification____last_update
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type____last_update
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_product_product____last_update
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_product_template____last_update
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_partner____last_update
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_website____last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__write_uid
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert von"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__write_date
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Hauptanhänge"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_has_error
+msgid "Message Delivery error"
+msgstr "Fehler beim Senden der Nachricht"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_ids
+msgid "Messages"
+msgstr "Nachrichten"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__multiple_count
+msgid "Multiple of Stock"
+msgstr "Vielfaches des Bestandes"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__name
+msgid "Name"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.res_config_settings_view_form
+msgid "Next call"
+msgstr "Nächster Aufruf"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,help:ayu_back_in_stock.field_res_config_settings__auto_send_back_in_stock_nextcall
+msgid "Next planned execution date for this job."
+msgstr "Nächstes geplantes Ausführungsdatum für den Prozess"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notification_type_form
+msgid "Notification Type"
+msgstr "Benachrichtigungstyp"
+
+#. module: ayu_back_in_stock
+#: model:ir.actions.act_window,name:ayu_back_in_stock.action_notification_type
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notification_type_tree
+msgid "Notification Types"
+msgstr "Benachrichtigungstypen"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notification_types_search
+msgid "Notification Types Search"
+msgstr "Benachrichtigungstypen-Suche"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields.selection,name:ayu_back_in_stock.selection__ayu_back_in_stock_notification__state__notified
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notifications_search
+msgid "Notified"
+msgstr "Benachrichtigt"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,help:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__multiple_count
+msgid ""
+"Notifies as many users as the available amount multiplied with this value, "
+"rounded up to full integers."
+msgstr ""
+"Benachrichtig so viele Nutzer, wie der Bestand mit diesem Wert "
+"mutlipliziert, auf ganze Zahlen gerundet."
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields.selection,name:ayu_back_in_stock.selection__ayu_back_in_stock_notification_type__on_back_in_stock__notify_all
+msgid "Notify All Waiting Users"
+msgstr "Alle wartenden Nutzer benachrichtigen"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields.selection,name:ayu_back_in_stock.selection__ayu_back_in_stock_notification_type__on_back_in_stock__notify_fixed
+msgid "Notify Fixed Amount of Waiting Users"
+msgstr "Feste Anzahl wartender Nutzer benachrichtigen"
+
+#. module: ayu_back_in_stock
+#. openerp-web
+#: code:addons/ayu_back_in_stock/static/src/xml/product_availability.xml:0
+#, python-format
+msgid "Notify Me"
+msgstr "Benachrichtigen Lassen"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields.selection,name:ayu_back_in_stock.selection__ayu_back_in_stock_notification_type__on_back_in_stock__notify_multiple
+msgid "Notify Multiple of Stock Amount"
+msgstr "Benachrichtige Vielfaches vom Bestand"
+
+#. module: ayu_back_in_stock
+#. openerp-web
+#: code:addons/ayu_back_in_stock/static/src/xml/product_availability.xml:0
+#, python-format
+msgid "Notify me when back in stock"
+msgstr "Benachrichtige mich, wenn wieder verfügbar"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,help:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,help:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,help:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.back_in_stock_already_registered
+msgid "OK"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__on_back_in_stock
+msgid "On Back in Stock"
+msgstr "Wenn wieder verfügbar"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.product_template_form_view
+msgid "On Not Available"
+msgstr "Wenn nicht verfügbar"
+
+#. module: ayu_back_in_stock
+#: model_terms:ayu_back_in_stock.notification_type,pop_up_content:ayu_back_in_stock.default_notification_type
+msgid "Once the product is back in stock, you will receive an email from us."
+msgstr ""
+"Wenn das Produkt wieder auf Lager ist, erhalten Sie eine Email von uns."
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields.selection,name:ayu_back_in_stock.selection__ayu_back_in_stock_notification__state__pending
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notifications_search
+msgid "Pending"
+msgstr "Ausstehend"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_website__pending_back_in_stock_ids
+msgid "Pending Back in Stock Notifications"
+msgstr "Ausstehende Verfügbarkeitsbenachrichtigungen"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.back_in_stock_registration_form
+msgid "Please enter your Email...."
+msgstr "Bitte Email angeben"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__pop_up_content
+msgid "Pop-Up Content"
+msgstr "Pop-Up Inhalt"
+
+#. module: ayu_back_in_stock
+#: model:ir.model,name:ayu_back_in_stock.model_product_product
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__product_id
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notifications_search
+msgid "Product"
+msgstr "Produkt"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__product_name
+msgid "Product Name"
+msgstr "Produktname"
+
+#. module: ayu_back_in_stock
+#: model:ir.model,name:ayu_back_in_stock.model_product_template
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__product_template_id
+msgid "Product Template"
+msgstr "Produktvorlage"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__product_template_ids
+msgid "Products"
+msgstr "Produkte"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.back_in_stock_registration_form
+msgid "Register Now"
+msgstr "Jetzt Registieren"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__registration_template_id
+msgid "Registration Email"
+msgstr "Registrierungs-Email"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.res_config_settings_view_form
+msgid "Reset to Default on Products"
+msgstr "Produkte auf den Standard zurücksetzen"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notification_form
+msgid "Reset to Pending"
+msgstr "Auf Ausstehend zurücksetzen"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS Zustellungsfehler"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__user_id
+msgid "Salesperson"
+msgstr "Verkäufer"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.res_config_settings_view_form
+msgid "Send Notifications Now!"
+msgstr "Benachrichtigen jetzt senden!"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.res_config_settings_view_form
+msgid "Send every"
+msgstr "Jede X senden"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__sent_date
+msgid "Sent on"
+msgstr "Gesendet am"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__sequence
+msgid "Sequence"
+msgstr "Reihenfolge"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__state
+msgid "State"
+msgstr "Status"
+
+#. module: ayu_back_in_stock
+#. openerp-web
+#: code:addons/ayu_back_in_stock/static/src/xml/product_availability.xml:0
+#, python-format
+msgid "Temporarily out of stock"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#. openerp-web
+#: code:addons/ayu_back_in_stock/static/src/js/register.js:0
+#, python-format
+msgid "Thank You for your registration!"
+msgstr "Danke für Ihre Registrierung!"
+
+#. module: ayu_back_in_stock
+#: model:mail.template,subject:ayu_back_in_stock.mail_template_registration
+msgid "Thanks for your interest on ${object.product_name}!"
+msgstr "Danke für Ihr Interesse an ${object.product_name}!"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__notification_type_id
+msgid "Type"
+msgstr "Typ"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_unread
+msgid "Unread Messages"
+msgstr "Ungelesene Nachrichten"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "# Ungelesene Nachrichten"
+
+#. module: ayu_back_in_stock
+#. openerp-web
+#: code:addons/ayu_back_in_stock/static/src/xml/product_availability.xml:0
+#: code:addons/ayu_back_in_stock/static/src/xml/product_availability.xml:0
+#: code:addons/ayu_back_in_stock/static/src/xml/product_availability.xml:0
+#: code:addons/ayu_back_in_stock/static/src/xml/product_availability.xml:0
+#, python-format
+msgid "Warning"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#: model:ir.model,name:ayu_back_in_stock.model_website
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__website_id
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notifications_search
+msgid "Website"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__website_message_ids
+msgid "Website Messages"
+msgstr "Website Nachrichten"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification__website_available
+msgid "Website Quantity"
+msgstr "Website Menge"
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,help:ayu_back_in_stock.field_ayu_back_in_stock_notification__website_message_ids
+msgid "Website communication history"
+msgstr "Website-Kommunikationshistorie"
+
+#. module: ayu_back_in_stock
+#. openerp-web
+#: code:addons/ayu_back_in_stock/static/src/xml/product_availability.xml:0
+#, python-format
+msgid "You already added"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.back_in_stock_already_registered
+msgid ""
+"You have already registerd to be notified when this product is back in stock.\n"
+"                  Unfortunataly, it is not yet available."
+msgstr ""
+"Sie haben sich bereits für Verfügbarkeitsbenachrichtigungen registriert.\n"
+"                  Leider ist es noch nicht wieder verfügbar."
+
+#. module: ayu_back_in_stock
+#: model:ir.model.fields,help:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__on_back_in_stock
+msgid ""
+"Your products might be sold quickly. To avoid frustration of waiting users, "
+"you can customize the maximum number of users to be notified when the "
+"scheduler runs."
+msgstr ""
+"Ihre Produkte könnten schnell wieder ausverkauft sein. Um Frustration "
+"wartender Nutzer zu vermeiden, können sie die Anzahl der Nutzer beschränken,"
+" die mit jedem Durchlauf informiert wird."
+
+#. module: ayu_back_in_stock
+#. openerp-web
+#: code:addons/ayu_back_in_stock/static/src/xml/product_availability.xml:0
+#, python-format
+msgid "all"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#. openerp-web
+#: code:addons/ayu_back_in_stock/static/src/xml/product_availability.xml:0
+#: code:addons/ayu_back_in_stock/static/src/xml/product_availability.xml:0
+#, python-format
+msgid "available"
+msgstr ""
+
+#. module: ayu_back_in_stock
+#. openerp-web
+#: code:addons/ayu_back_in_stock/static/src/xml/product_availability.xml:0
+#, python-format
+msgid "in your cart."
+msgstr ""

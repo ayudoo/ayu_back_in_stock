@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="1">
+
+    <record id="mail_template_registration" model="mail.template">
+      <field name="name">Back in Stock: Registration Email</field>
+      <field name="model_id" ref="ayu_back_in_stock.model_ayu_back_in_stock_notification"/>
+      <field name="subject">Thanks for your interest on ${object.product_name}!</field>
+      <field name="email_from">${(object.user_id.email_formatted or user.email_formatted) | safe}</field>
+      <field name="email_to">${object.email_formatted | safe}</field>
+      <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px;">
+  <p style="margin: 0px; padding: 0px; font-size: 12px;">
+    Hello,
+    <br/><br/>
+    <p>Thank you for the interest in our product
+      <a href="${object.product_id.website_url | safe}">${object.product_name}</a>!
+    </p>
+    <p>We received your registration and will notify you as soon as it's back in stock. Please apologize the waiting time.</p>
+    <p>Do not hesitate to contact us if you have any questions.</p>
+  </p>
+</div></field>
+      <field name="lang">${object.lang_id.code}</field>
+      <field name="auto_delete" eval="True"/>
+    </record>
+
+    <record id="mail_template_back_in_stock" model="mail.template">
+      <field name="name">Back in Stock: It's Back Notification</field>
+      <field name="model_id" ref="ayu_back_in_stock.model_ayu_back_in_stock_notification"/>
+      <field name="subject">${object.product_name} is Back in Stock!</field>
+      <field name="email_from">${(object.user_id.email_formatted or user.email_formatted) | safe}</field>
+      <field name="email_to">${object.email_formatted | safe}</field>
+      <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px;">
+  <p style="margin: 0px; padding: 0px; font-size: 12px;">
+    Hello,
+    <br/><br/>
+    <p>
+      <a href="${object.product_id.website_url | safe}">${object.product_name}</a>
+      is available again!
+    </p>
+    <p>React quick, so you don't miss it.</p>
+  </p>
+</div></field>
+      <field name="lang">${object.lang_id.code}</field>
+      <field name="auto_delete" eval="True"/>
+    </record>
+
+
+  </data>
+</odoo>

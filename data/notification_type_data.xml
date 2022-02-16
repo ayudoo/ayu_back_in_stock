@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="1">
+
+    <record
+      forcecreate="True"
+      id="default_notification_type"
+      model="ayu_back_in_stock.notification_type">
+      <field name="name">Default Notify Me</field>
+      <field
+        name="registration_template_id"
+        ref="ayu_back_in_stock.mail_template_registration"/>
+      <field
+        name="back_in_stock_template_id"
+        ref="ayu_back_in_stock.mail_template_back_in_stock"/>
+      <field name="pop_up_content">
+        <![CDATA[<p>Once the product is back in stock, you will receive an email from us.</p>]]>
+      </field>
+    </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="view_partner_form" model="ir.ui.view">
+      <field name="name">res.partner.form.back_in_stock</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="account.partner_view_buttons"/>
+      <field name="arch" type="xml">
+        <button name="action_view_partner_invoices" position="after">
+          <button
+            type="object"
+            name="action_pending_back_in_stock"
+            context="{'default_partner_id': id}"
+            class="oe_stat_button"
+            icon="fa-envelope-o">
+            <div class="o_field_widget o_stat_info">
+              <span class="o_stat_value">
+                <field name="back_in_stock_count" widget="statinfo" nolabel="1"/>
+              </span>
+              <span class="o_stat_text">Pending</span>
+            </div>
+          </button>
+        </button>
+      </field>
+    </record>
+
+  </data>
+</odoo>

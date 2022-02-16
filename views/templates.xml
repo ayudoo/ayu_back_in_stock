@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <template
+    id="assets_frontend"
+    inherit_id="website.assets_frontend"
+    name="Ayu Back in Stock Frontend Assets">
+    <xpath expr="." position="inside">
+      <link
+        rel="stylesheet"
+        type="text/less"
+        href="/ayu_back_in_stock/static/src/scss/frontend.scss"/>
+      <script type="text/javascript" src="/ayu_back_in_stock/static/src/js/variant_mixin.js"></script>
+      <script type="text/javascript" src="/ayu_back_in_stock/static/src/js/register.js"></script>
+    </xpath>
+  </template>
+
+  <template
+    id="back_in_stock_registration_form"
+    name="Ayu Back in Stock Registration Form">
+    <div id="ayu_back_in_in_stock_registration_modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="panel-title">I want to be notified when Back in Stock</div>
+            <button type="button" class="close font-weight-normal" data-dismiss="modal">x</button>
+          </div>
+          <form
+            action="/back-in-stock/notify-me"
+            method="post"
+            role="form"
+            class="form-horizontal">
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+            <input type="hidden" name="product_id" t-att-value="product.id"/>
+            <div class="modal-body">
+              <h2 t-field="product.with_context(display_default_code=False).display_name"/>
+              <br/>
+              <div class="form-group form-inline">
+                <label for="email" class="col-sm-2 control-label">
+                  <span class="fa fa-envelope mr-1"/>
+                  <div class="d-inline-block">Email</div>
+                </label>
+                <div class="col-sm-10">
+                  <input
+                    class="form-control"
+                    name="email"
+                    id="email"
+                    type="email"
+                    t-att-value="email"
+                    required="required"
+                    placeholder="Please enter your Email...."/>
+                </div>
+              </div>
+              <div t-field="notification_type.pop_up_content"/>
+            </div>
+            <div class="modal-footer">
+              <div class="modal-footer-buttons">
+                <button type="button" class="btn btn-primary" id="btn_submit">Register Now</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <template
+    id="back_in_stock_already_registered"
+    name="Ayu Back in Stock Already Registered">
+    <div id="ayu_back_in_in_stock_registration_modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="panel-title">Already Registerd</div>
+            <button type="button" class="close" data-dismiss="modal">x</button>
+          </div>
+          <form action="/back-in-stock/notify-me">
+            <div class="modal-body">
+              <h2 t-field="product.with_context(display_default_code=False).display_name"/>
+              <br/>
+              <div class="container">
+                <p>You have already registerd to be notified when this product is back in stock.
+                  Unfortunataly, it is not yet available.</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="modal-footer-buttons">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </template>
+
+</odoo>

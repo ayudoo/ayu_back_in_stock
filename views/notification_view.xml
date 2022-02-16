@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="view_notifications_search" model="ir.ui.view">
+      <field name="name">ayu_back_in_stock.notification.search</field>
+      <field name="model">ayu_back_in_stock.notification</field>
+      <field name="arch" type="xml">
+        <search string="Back in Stock Notifications Search">
+          <field name="email"/>
+          <field name="partner_id"/>
+          <field name="product_id"/>
+          <field name="product_template_id"/>
+          <separator/>
+          <filter name="pending" string="Pending" domain="[('state','=','pending')]"/>
+          <filter name="notified" string="Notified" domain="[('state','=','notified')]"/>
+          <filter name="cancel" string="Cancelled" domain="[('state','=','cancel')]"/>
+          <separator/>
+          <group>
+            <filter string="Email" name="group_by_email" context="{'group_by':'email'}"/>
+            <filter string="Product" name="group_by_product" context="{'group_by':'product_id'}"/>
+            <filter string="Website" name="group_by_website" context="{'group_by':'website_id'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <record id="view_notification_tree" model="ir.ui.view">
+      <field name="name">ayu_back_in_stock.notification.tree</field>
+      <field name="model">ayu_back_in_stock.notification</field>
+      <field name="arch" type="xml">
+        <tree string="Back in Stock Notification">
+          <field name="sequence" widget="handle"/>
+          <field name="email"/>
+          <field name="partner_id" optional="show"/>
+          <field name="product_id"/>
+          <field name="website_id" optional="show"/>
+          <field name="website_available"/>
+          <field name="notification_type_id"/>
+          <field name="state"/>
+          <field name="sent_date" optional="show"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_notification_form" model="ir.ui.view">
+      <field name="name">ayu_back_in_stock.notification.form</field>
+      <field name="model">ayu_back_in_stock.notification</field>
+      <field name="arch" type="xml">
+        <form string="Back in Stock Notification">
+          <header>
+            <button
+              name="action_reset_to_pending"
+              states="notified,cancel"
+              type="object"
+              string="Reset to Pending"/>
+            <button
+              name="send_registration_confirmation_mail"
+              states="pending"
+              type="object"
+              string="(Re)send Registration Mail"/>
+            <button
+              name="action_cancel"
+              type="object"
+              string="Cancel"
+              attrs="{'invisible': [('|'),('id','=',False),('state','!=','cancel')]}"/>
+            <field name="state" widget="statusbar" statusbar_visible="pending,notified"/>
+          </header>
+          <sheet>
+            <group>
+              <group>
+                <field name="email"/>
+                <field name="partner_id" attrs="{'invisible': [('partner_id','=',False)]}"/>
+                <field name="product_id"/>
+                <field name="lang_id"/>
+              </group>
+              <group>
+                <field name="user_id"/>
+                <field name="notification_type_id"/>
+                <field name="website_id"/>
+                <field name="website_available"/>
+                <field name="sent_date" attrs="{'invisible': [('state','!=','notified')]}"/>
+              </group>
+            </group>
+          </sheet>
+          <div class="oe_chatter">
+            <field name="message_follower_ids"/>
+            <!-- <field name="activity_ids"/> -->
+            <field name="message_ids"/>
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_notification" model="ir.actions.act_window">
+      <field name="name">Back in Stock Notifications</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="context">{'search_default_pending': 1}</field>
+      <field name="res_model">ayu_back_in_stock.notification</field>
+      <field name="view_id" ref="view_notification_tree"/>
+    </record>
+
+    <menuitem
+      id="product_back_in_stock_notification_menu"
+      name="Back in Stock Notifications"
+      action="ayu_back_in_stock.action_notification"
+      parent="stock.menu_stock_inventory_control"
+      sequence="20"/>
+
+  </data>
+</odoo>
