@@ -35,6 +35,8 @@ class Product(models.Model):
 
     def _send_back_in_stock_notification_mails(self, website):
         self = self.with_context(website_id=website.id)
+        if website.warehouse_id:
+            self = self.with_context(warehouse=website.warehouse_id.id)
 
         if (
             float_compare(
