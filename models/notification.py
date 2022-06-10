@@ -114,10 +114,16 @@ class Notification(models.Model):
                 record.website_available = 0
                 continue
 
-            if record.website_id:
-                record = record.with_context(website_id=record.website_id.id)
+            product = record.product_id
 
-            record.website_available = record.product_id.virtual_available
+            if record.website_id:
+                product = product.with_context(website_id=record.website_id.id)
+                if record.website_id.warehouse_id:
+                    product = product.with_context(
+                        warehouse=record.website_id.warehouse_id.id,
+                    )
+
+            record.website_available = product.virtual_available
 
     website_available = fields.Float(
         "Website Quantity",
