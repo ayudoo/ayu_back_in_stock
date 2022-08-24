@@ -117,11 +117,10 @@ class Notification(models.Model):
             product = record.product_id
 
             if record.website_id:
-                product = product.with_context(website_id=record.website_id.id)
-                if record.website_id.warehouse_id:
-                    product = product.with_context(
-                        warehouse=record.website_id.warehouse_id.id,
-                    )
+                product = product.with_context(
+                    website_id=record.website_id.id,
+                    warehouse=record.website_id._get_warehouse_available(),
+                )
 
             record.website_available = product.virtual_available
 
