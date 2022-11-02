@@ -8,6 +8,7 @@ odoo.define('back_in_stock.register', function(require) {
 
   publicWidget.registry.BackInStockRegister = publicWidget.Widget.extend({
     selector: '.oe_website_sale #product_details',
+
     events: {
       'click .js_back_in_stock_notify_me': '_onClick',
     },
@@ -15,7 +16,6 @@ odoo.define('back_in_stock.register', function(require) {
     init: function() {
       this._super.apply(this, arguments);
       this._loading = false;
-
       // this._openRegisterModal = _.debounce(this._openRegisterModal.bind(this), 500);
     },
 

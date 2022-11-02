@@ -31,5 +31,14 @@
         "views/res_config_settings_view.xml",
         "views/templates.xml",
     ],
+    "assets": {
+        "web.assets_frontend": [
+            "ayu_back_in_stock/static/src/scss/frontend.scss",
+            "ayu_back_in_stock/static/src/js/variant_mixin.js",
+            "ayu_back_in_stock/static/src/js/register.js",
+
+            "ayu_back_in_stock/static/src/xml/product_availability.xml",
+        ],
+    },
     "demo": [],
 }

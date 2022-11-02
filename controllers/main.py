@@ -1,10 +1,10 @@
 import werkzeug
-from odoo.addons.website_sale_stock.controllers.main import WebsiteSaleStock
+from odoo.addons.website_sale_stock.controllers.main import WebsiteSale
 from odoo import http
 from odoo.http import request
 
 
-class WebsiteSaleBackInStock(WebsiteSaleStock):
+class WebsiteSaleBackInStock(WebsiteSale):
     @http.route(
         ['/back-in-stock/registration-form/<model("product.product"):product>'],
         type="http",
@@ -93,7 +93,7 @@ class WebsiteSaleBackInStock(WebsiteSaleStock):
         }
 
     def _get_back_in_stock_notification_data(self, email, product, **kwargs):
-        lang_id = request.env["res.lang"]._lang_get_id(request._context["lang"])
+        lang_id = request.env["res.lang"]._lang_get_id(request.context["lang"])
 
         values = {
             "email": email,

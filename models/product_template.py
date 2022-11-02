@@ -51,10 +51,7 @@ class ProductTemplate(models.Model):
         return info
 
     def _get_back_in_stock_notify_me(self, website):
-        if (
-            self.inventory_availability in ["always", "threshold"]
-            and self.back_in_stock_notification_type_id
-        ):
+        if self.back_in_stock_notification_type_id:
             return website.back_in_stock_active
 
         return False

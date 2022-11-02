@@ -13,10 +13,6 @@ odoo.define('ayu_back_in_stock.VariantMixin', function(require) {
   var ajax = require('web.ajax');
   var core = require('web.core');
   var QWeb = core.qweb;
-  var xml_load = ajax.loadXML(
-    '/ayu_back_in_stock/static/src/xml/product_availability.xml',
-    QWeb
-  );
 
   VariantMixin._onChangeCombinationStock = function(ev, $parent, combination) {
     var product_id = 0;

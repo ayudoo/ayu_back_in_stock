@@ -8,6 +8,7 @@ Back in Stock
 Notify customers if a product is `Back in Stock`, customize pop-ups and emails for
 different types of products.
 
+**This is the Odoo 16 branch**
 
 **Table of contents**
 
@@ -37,10 +38,7 @@ sections of the website activate ``Back in Stock Registration`` and save.
 Now, `Temporarily out of stock` products allow for customers to register to be notified
 when it's back.
 
-Note, that the ``Notify Me`` only has effect on products with the following
-`Availability` options:
-``Show inventory below a threshold and prevent sales if not enough stock`` and
-``Show inventory on website and prevent sales if not enough stock``.
+Note, that the ``Notify Me`` is only visible, if a notification type is set.
 
 
 Customization
@@ -61,8 +59,8 @@ Furthermore, you can reduce the max amount of users to be notified on every chec
 be sold quickly. Users opening the link to late will find the sold out product again,
 presumably an undesirable experience.
 
-In the product form's `eCommerce` tab, you can choose the notification type in the
-``On Not Available`` select field directly under ``Availability``.
+In the product form's `Sales` tab, you can choose the notification type in the
+``Back In Stock Notification`` select field under ``Out-Of-Stock``.
 
 
 Overview of pending Notifications
