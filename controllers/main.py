@@ -10,6 +10,7 @@ class WebsiteSaleBackInStock(WebsiteSale):
         type="http",
         auth="public",
         website=True,
+        sitemap=False,
     )
     def back_in_stock_product(self, product, **kwargs):
         email = ""
@@ -69,6 +70,7 @@ class WebsiteSaleBackInStock(WebsiteSale):
         auth="public",
         methods=["POST"],
         website=True,
+        sitemap=False,
     )
     def back_in_stock_notify_me(self, email, product_id, **kwargs):
         product_id = int(product_id)
