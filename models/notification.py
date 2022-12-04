@@ -130,23 +130,29 @@ class Notification(models.Model):
         digits="Product Unit of Measure",
     )
 
-    @api.model
-    def create(self, vals):
-        email = vals.get("email", None)
-        partner_id = vals.get("partner_id", None)
+    @api.model_create_multi
+    def create(self, values_list):
         website = ir_http.get_request_website()
+        website_partner = None
+        if website and not website.is_public_user():
+            website_partner = website.env.user.partner_id
 
-        if email:
-            # enforce user contact when created from website context
-            if website and not website.is_public_user():
-                vals["partner_id"] = self.env.user.partner_id.id
+        for values in values_list:
+            email = values.get("email", None)
+            if email:
+                if website_partner:
+                    values["partner_id"] = website_partner.id
+                else:
+                    partner_id = values.get("partner_id", None)
+                    if not partner_id:
+                        partner = self.env["res.partner"].search(
+                            [("email", "=", email)],
+                            limit=1,
+                        )
+                        if partner:
+                            values["partner_id"] = partner.id
 
-            elif not partner_id:
-                partners = self.env["res.partner"].search([("email", "=", email)])
-                if partners:
-                    vals["partner_id"] = partners[0].id
-
-        return super().create(vals)
+        return super().create(values_list)
 
     def send_registration_confirmation_mail(self):
         if self.env.su:
