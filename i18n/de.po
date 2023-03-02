@@ -212,6 +212,12 @@ msgid "Back in Stock: send notifications"
 msgstr ""
 
 #. module: ayu_back_in_stock
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_res_config_settings__website_back_in_stock_reply_to
+#: model:ir.model.fields,field_description:ayu_back_in_stock.field_website__back_in_stock_reply_to
+msgid "Back-In-Stock Reply To"
+msgstr "Back-In-Stock Antworten An"
+
+#. module: ayu_back_in_stock
 #: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.back_in_stock_registration_form
 #: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notification_form
 msgid "Cancel"
@@ -226,7 +232,7 @@ msgstr "Abgebrochen"
 #. module: ayu_back_in_stock
 #: model:ir.model,name:ayu_back_in_stock.model_res_config_settings
 msgid "Config Settings"
-msgstr "Konfiguration "
+msgstr "Konfiguration"
 
 #. module: ayu_back_in_stock
 #: model:ir.model,name:ayu_back_in_stock.model_res_partner
@@ -602,6 +608,11 @@ msgstr "Jetzt Registieren"
 #: model:ir.model.fields,field_description:ayu_back_in_stock.field_ayu_back_in_stock_notification_type__registration_template_id
 msgid "Registration Email"
 msgstr "Registrierungs-Email"
+
+#. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.res_config_settings_view_form_website
+msgid "Reply To"
+msgstr "Antworten An"
 
 #. module: ayu_back_in_stock
 #: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.res_config_settings_view_form

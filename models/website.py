@@ -17,6 +17,11 @@ class Website(models.Model):
         string="Pending Back in Stock Notifications",
     )
 
+    back_in_stock_reply_to = fields.Char(
+        string="Back-In-Stock Reply To",
+        translate=False,
+    )
+
     @api.model
     def send_back_in_stock_notification_mails(self):
         for website in self.search([]):
