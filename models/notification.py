@@ -154,6 +154,15 @@ class Notification(models.Model):
 
         return super().create(values_list)
 
+    def _notify_get_reply_to(self, **kwargs):
+        res = super()._notify_get_reply_to(**kwargs)
+        if self.website_id.back_in_stock_reply_to:
+            res = {
+                res_id: self.website_id.back_in_stock_reply_to
+                for res_id in res.keys()
+            }
+        return res
+
     def send_registration_confirmation_mail(self):
         if self.env.su:
             self = self.with_user(SUPERUSER_ID)

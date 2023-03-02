@@ -52,6 +52,12 @@ class ResConfigSettings(models.TransientModel):
         related="website_id.back_in_stock_active",
     )
 
+    website_back_in_stock_reply_to = fields.Char(
+        string="Back-In-Stock Reply To",
+        readonly=False,
+        related="website_id.back_in_stock_reply_to",
+    )
+
     def action_update_notification_type_on_products(self):
         type_id = self.back_in_stock_notification_type_id.id or False
         self.env["product.template"].with_context(active_test=False).search([]).write(

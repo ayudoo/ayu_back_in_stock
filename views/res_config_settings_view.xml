@@ -87,6 +87,15 @@
             If the product is configured accordingly, users can register for back in stock
             notifications.
           </div>
+          <div class="content-group">
+            <div class="mt16">
+              <label
+                string="Reply To"
+                for="website_back_in_stock_reply_to"
+                class="o_light_label"/>
+              <field name="website_back_in_stock_reply_to"/>
+            </div>
+          </div>
         </div>
       </xpath>
     </field>
