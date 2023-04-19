@@ -28,8 +28,7 @@
             <input type="hidden" name="product_id" t-att-value="product.id"/>
             <div class="modal-body">
               <h2 t-field="product.with_context(display_default_code=False).display_name"/>
-              <br/>
-              <div class="form-group form-inline">
+              <div class="row form-group align-items-center mt-3 mb-3">
                 <label for="email" class="col-sm-2 control-label">
                   <span class="fa fa-envelope mr-1"/>
                   <div class="d-inline-block">Email</div>
