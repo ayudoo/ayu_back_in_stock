@@ -2,18 +2,29 @@ import werkzeug
 from odoo.addons.website_sale_stock.controllers.main import WebsiteSale
 from odoo import http
 from odoo.http import request
+from odoo.addons.http_routing.models.ir_http import unslug
 
 
 class WebsiteSaleBackInStock(WebsiteSale):
     @http.route(
-        ['/back-in-stock/registration-form/<model("product.product"):product>'],
+        ['/back-in-stock/registration-form/<int:product_id>'],
         type="http",
         auth="public",
         website=True,
         sitemap=False,
     )
-    def back_in_stock_product(self, product, **kwargs):
+    def back_in_stock_product(self, product_id, **kwargs):
         email = ""
+        product = request.env["product.product"].browse(product_id)
+        is_website_restricted_editor = request.env['res.users'].has_group(
+            'website.group_website_restricted_editor'
+        )
+
+        if not (
+            product.exists()
+            and (is_website_restricted_editor or product.sudo().website_published)
+        ):
+            raise werkzeug.exceptions.NotFound("Product ID not found")
 
         if not request.website.is_public_user():
             is_registered = self._is_back_in_stock_registered(product)
