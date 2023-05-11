@@ -92,7 +92,7 @@
               <label
                 string="Reply To"
                 for="website_back_in_stock_reply_to"
-                class="o_light_label"/>
+                class="col-sm-3 o_light_label"/>
               <field name="website_back_in_stock_reply_to"/>
             </div>
           </div>
