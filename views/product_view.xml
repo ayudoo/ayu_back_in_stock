@@ -9,14 +9,19 @@
       ref="website_sale_stock.product_template_form_view_inherit_website_sale_stock"/>
     <field name="arch" type="xml">
       <field name="out_of_stock_message" position="before">
-        <field
-          name="back_in_stock_notification_type_id"
-          string="Back In Stock Notification"
+        <div
+          colspan="2"
           attrs="{'invisible':[
             ('|'),
             ('allow_out_of_stock_order', '=', True),
             ('type', 'in', ['service', 'consu']),
-          ]}"/>
+          ]}">
+          <label for="back_in_stock_notification_type_id" />
+          <field
+            name="back_in_stock_notification_type_id"
+            string="Back In Stock Notification"
+            class="oe_inline"/>
+        </div>
       </field>
     </field>
   </record>
