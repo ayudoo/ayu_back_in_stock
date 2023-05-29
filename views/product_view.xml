@@ -8,14 +8,15 @@
       name="inherit_id"
       ref="website_sale_stock.product_template_form_view_inherit_website_sale_stock"/>
     <field name="arch" type="xml">
-      <field name="out_of_stock_message" position="after">
-        <label
-          for="back_in_stock_notification_type_id"
-          attrs="{'invisible':[('allow_out_of_stock_order', '=', True)]}"/>
+      <field name="out_of_stock_message" position="before">
         <field
           name="back_in_stock_notification_type_id"
           string="Back In Stock Notification"
-          attrs="{'invisible':[('allow_out_of_stock_order', '=', True)]}"/>
+          attrs="{'invisible':[
+            ('|'),
+            ('allow_out_of_stock_order', '=', True),
+            ('type', 'in', ['service', 'consu']),
+          ]}"/>
       </field>
     </field>
   </record>
