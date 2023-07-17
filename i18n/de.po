@@ -699,6 +699,11 @@ msgid "Unread Messages Counter"
 msgstr "# Ungelesene Nachrichten"
 
 #. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notifications_search
+msgid "Unpublished"
+msgstr "Unveröffentlicht"
+
+#. module: ayu_back_in_stock
 #. openerp-web
 #: code:addons/ayu_back_in_stock/static/src/xml/product_availability.xml:0
 #: code:addons/ayu_back_in_stock/static/src/xml/product_availability.xml:0
