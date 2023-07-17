@@ -1,8 +1,9 @@
 import werkzeug
-from odoo.addons.website_sale_stock.controllers.main import WebsiteSale
 from odoo import http
-from odoo.http import request
 from odoo.addons.http_routing.models.ir_http import unslug
+from odoo.addons.website_sale_stock.controllers.main import WebsiteSale
+from odoo.exceptions import UserError
+from odoo.http import request
 
 
 class WebsiteSaleBackInStock(WebsiteSale):
@@ -84,6 +85,9 @@ class WebsiteSaleBackInStock(WebsiteSale):
         sitemap=False,
     )
     def back_in_stock_notify_me(self, email, product_id, **kwargs):
+        if not email:
+            raise UserError("Invalid Email")
+
         product_id = int(product_id)
         product = request.env["product.product"].browse(product_id)
 

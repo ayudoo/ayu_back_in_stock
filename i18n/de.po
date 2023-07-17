@@ -600,6 +600,11 @@ msgid "Products"
 msgstr "Produkte"
 
 #. module: ayu_back_in_stock
+#: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.view_notifications_search
+msgid "Published"
+msgstr "Veröffentlicht"
+
+#. module: ayu_back_in_stock
 #: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.back_in_stock_registration_form
 msgid "Register Now"
 msgstr "Jetzt Registieren"

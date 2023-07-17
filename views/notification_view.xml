@@ -16,6 +16,8 @@
           <filter name="notified" string="Notified" domain="[('state','=','notified')]"/>
           <filter name="cancel" string="Cancelled" domain="[('state','=','cancel')]"/>
           <separator/>
+          <filter name="published" string="Published" domain="[('product_id.website_published','=',True)]"/>
+          <separator/>
           <group>
             <filter string="Email" name="group_by_email" context="{'group_by':'email'}"/>
             <filter string="Product" name="group_by_product" context="{'group_by':'product_id'}"/>
@@ -95,7 +97,10 @@
     <record id="action_notification" model="ir.actions.act_window">
       <field name="name">Back in Stock Notifications</field>
       <field name="type">ir.actions.act_window</field>
-      <field name="context">{'search_default_pending': 1}</field>
+      <field name="context">{
+        'search_default_pending': 1,
+        'search_default_published': 1,
+      }</field>
       <field name="res_model">ayu_back_in_stock.notification</field>
       <field name="view_id" ref="view_notification_tree"/>
     </record>
