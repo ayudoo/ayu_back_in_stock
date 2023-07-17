@@ -13,7 +13,7 @@ class Website(models.Model):
     pending_back_in_stock_ids = fields.One2many(
         "ayu_back_in_stock.notification",
         "website_id",
-        domain=[("state", "=", "pending")],
+        domain=[("state", "=", "pending"), ("product_id.website_published", "=", True)],
         string="Pending Back in Stock Notifications",
     )
 
