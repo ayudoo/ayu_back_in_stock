@@ -33,7 +33,7 @@ class Product(models.Model):
             )
         return action
 
-    def _send_back_in_stock_notification_mails(self, website):
+    def _get_pending_back_in_stock_notifications(self, website):
         self = self.with_context(
             website_id=website.id,
             warehouse=website._get_warehouse_available(),
@@ -45,13 +45,13 @@ class Product(models.Model):
             )
             <= 0
         ):
-            return
+            return []
 
         notification_type = self.product_tmpl_id.back_in_stock_notification_type_id
 
         limit = notification_type.get_limit_to_notify(self.virtual_available)
 
-        pending_notification = self.env["ayu_back_in_stock.notification"].search(
+        return self.env["ayu_back_in_stock.notification"].search(
             [
                 ("website_id", "=", website.id),
                 ("product_id", "=", self.id),
@@ -59,6 +59,9 @@ class Product(models.Model):
             ],
             limit=limit,
         )
+
+    def _send_back_in_stock_notification_mails(self, website):
+        pending_notification = self._get_pending_back_in_stock_notifications(website)
 
         for notification in pending_notification:
             notification.send_back_in_stock_mail()
