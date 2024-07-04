@@ -1,5 +1,5 @@
 import werkzeug
-from odoo import http
+from odoo import _, http
 from odoo.addons.http_routing.models.ir_http import unslug
 from odoo.addons.website_sale_stock.controllers.main import WebsiteSale
 from odoo.exceptions import UserError
@@ -44,7 +44,10 @@ class WebsiteSaleBackInStock(WebsiteSale):
         notification_type = product.product_tmpl_id.back_in_stock_notification_type_id
 
         if not notification_type:
-            return ""
+            raise UserError(_(
+                "Please apologize, currently we don't offer back-in-stock"
+                + " notifications for this product."
+            ))
 
         return request.env["ir.ui.view"]._render_template(
             "ayu_back_in_stock.back_in_stock_registration_form",

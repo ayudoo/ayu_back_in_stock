@@ -567,6 +567,15 @@ msgid "Pending Back in Stock Notifications"
 msgstr "Ausstehende Verfügbarkeitsbenachrichtigungen"
 
 #. module: ayu_back_in_stock
+#. odoo-python
+#: code:addons/ayu_back_in_stock/controllers/main.py:0
+#, python-format
+msgid ""
+"Please apologize, currently we don't offer back-in-stock notifications for "
+"this product."
+msgstr "Entschuldigung, wir bieten aktuelle keine Verfügbarkeitsbenachrichtigen für dieses Produkt an."
+
+#. module: ayu_back_in_stock
 #: model_terms:ir.ui.view,arch_db:ayu_back_in_stock.back_in_stock_registration_form
 msgid "Please enter your Email...."
 msgstr "Bitte Email angeben"
