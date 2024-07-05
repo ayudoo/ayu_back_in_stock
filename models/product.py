@@ -41,7 +41,7 @@ class Product(models.Model):
 
         if (
             float_compare(
-                self.virtual_available, 0, precision_rounding=self.uom_id.rounding
+                self.free_qty, 0, precision_rounding=self.uom_id.rounding
             )
             <= 0
         ):
@@ -49,7 +49,7 @@ class Product(models.Model):
 
         notification_type = self.product_tmpl_id.back_in_stock_notification_type_id
 
-        limit = notification_type.get_limit_to_notify(self.virtual_available)
+        limit = notification_type.get_limit_to_notify(self.free_qty)
 
         return self.env["ayu_back_in_stock.notification"].search(
             [

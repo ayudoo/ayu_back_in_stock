@@ -122,7 +122,7 @@ class Notification(models.Model):
                     warehouse=record.website_id._get_warehouse_available(),
                 )
 
-            record.website_available = product.virtual_available
+            record.website_available = product.free_qty
 
     website_available = fields.Float(
         "Website Quantity",
